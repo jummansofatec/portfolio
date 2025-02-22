@@ -30,7 +30,6 @@ section {
     background: url("assets/img/bg-apresentacao.jpg") no-repeat center center/cover;
 }
 
-
 /* Adiciona um efeito de overlay para melhorar a leitura do texto */
 section::before {
     content: "";
@@ -57,6 +56,14 @@ section * {
     margin: 10px auto;
 }
 
+/* Media Query para telas menores */
+@media (max-width: 768px) {
+    #apresentacao img {
+        width: 150px;  /* Ajusta a largura da imagem em telas menores */
+        height: 150px; /* Ajusta a altura da imagem em telas menores */
+    }
+}
+
 
 
 footer {
@@ -64,8 +71,48 @@ footer {
     color: white;
     padding: 10px;
     width: 99.1%;
+    display: flex;
+    align-items: center; /* Garante que os itens fiquem centralizados na linha */
+    justify-content: center;
+    flex-wrap: wrap; /* Permite que os itens se ajustem em várias linhas se necessário */
 }
 
+footer p {
+    text-align: center;
+    margin: 5px 10px;
+}
+
+.contact-bttn, .contact-btn {
+    margin: 5px 10px;
+}
+
+.contact-icon {
+    width: 20px;
+    height: 20px;
+}
+
+/* Media Query para telas menores */
+@media (max-width: 768px) {
+    footer {
+        flex-direction: column; /* Muda para uma coluna em telas pequenas */
+        align-items: center; /* Garante que os itens fiquem centralizados */
+    }
+
+    .contact-bttn, .contact-btn {
+        margin: 10px 0; /* Ajusta o espaçamento entre os botões */
+    }
+
+    .contact-icon {
+        width: 25px; /* Aumenta um pouco o tamanho dos ícones em telas pequenas */
+        height: 25px;
+    }
+
+    footer p {
+        font-size: 14px; /* Diminui a fonte para telas pequenas */
+    }
+}
+
+/* Sidebar normal para telas grandes */
 .sidebar {
     position: fixed;
     top: 0;
@@ -78,6 +125,7 @@ footer {
     flex-direction: column;
     align-items: center;
     padding-top: 20px;
+    transition: width 0.3s ease; /* Transição suave para a largura */
 }
 
 .sidebar ul {
@@ -114,6 +162,7 @@ footer {
     object-fit: cover;
 }
 
+/* Ajuste no conteúdo */
 .content {
     margin-left: 220px; /* Garante espaço ao lado da sidebar */
     max-width: calc(100% - 220px); /* Limita a largura da content para evitar sobreposição */
@@ -121,6 +170,58 @@ footer {
     box-sizing: border-box;
 }
 
+/* Media Query para telas pequenas */
+@media (max-width: 768px) {
+    /* Sidebar para telas pequenas */
+    .sidebar {
+        width: 0; /* Inicialmente oculta a sidebar */
+        height: 100%;
+        overflow: hidden;
+        position: absolute;
+        z-index: 1; /* Coloca a sidebar atrás do conteúdo */
+        transition: width 0.3s ease; /* Transição suave quando aparecer */
+    }
+
+    /* Exibe a sidebar quando o mouse passa por cima */
+    .sidebar:hover {
+        width: 200px; /* Exibe a sidebar */
+    }
+
+    /* Ajuste no conteúdo para telas pequenas */
+    .content {
+        margin-left: 0; /* Não há mais espaço reservado para a sidebar */
+    }
+
+    /* Organiza os itens da lista em colunas para telas pequenas */
+    .sidebar ul li {
+        flex-direction: column; /* Organiza os itens verticalmente */
+        align-items: flex-start; /* Alinha à esquerda */
+        margin: 10px 0;
+    }
+}
+
+/* Ajustes adicionais para garantir que a sidebar seja visível e responsiva sem distorções */
+@media (max-width: 768px) {
+    /* Exibe a sidebar quando o mouse passa por cima */
+    .sidebar {
+        width: 0; /* Inicia oculta */
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: -200px; /* Coloca a sidebar fora da tela */
+        z-index: 1;
+        transition: left 0.3s ease; /* Transição suave ao mover a sidebar */
+    }
+
+    .sidebar.open {
+        left: 0; /* Sidebar aparece ao passar o mouse ou ao ativar a classe 'open' */
+    }
+
+    /* Ajuste no conteúdo */
+    .content {
+        margin-left: 0; /* Sem espaço à esquerda para o conteúdo */
+    }
+}
 
 #contato {
     display: flex;
