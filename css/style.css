@@ -1,0 +1,277 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 50;
+    padding: 50;
+    text-align: center;
+    background: url("../assets/img/tempotempo.png") no-repeat center center fixed;
+    background-size: cover;
+}
+
+header {
+    background-color: #000000;
+    color: white;
+    padding: 20px;
+}
+
+.text-large {
+    font-size: 20px; /* Aumente o valor se precisar de um texto maior */
+}
+
+section {
+    padding: 10px 10px; /* Adiciona espaçamento interno */
+    margin-bottom: 10px; /* Adiciona espaçamento entre seções */
+    color: rgb(10, 10, 10); /* Deixa o texto branco para contraste */
+    text-align: center;
+    position: relative; /* Para que os conteúdos fiquem sobre o fundo */
+}
+
+/* Aplica imagem de fundo específica para cada seção */
+#apresentacao {
+    background: url("assets/img/bg-apresentacao.jpg") no-repeat center center/cover;
+}
+
+
+/* Adiciona um efeito de overlay para melhorar a leitura do texto */
+section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent; /* Deixa o fundo mais claro */
+}
+
+/* Faz com que o conteúdo das seções fique acima do overlay */
+section * {
+    position: relative;
+    z-index: 5;
+}
+
+#apresentacao img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    border: 4px solid #020202;
+    display: block;
+    margin: 10px auto;
+}
+
+
+
+footer {
+    background-color: #340c3b;
+    color: white;
+    padding: 10px;
+    width: 99.1%;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100vh;
+    background-color: #000000;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    transition: background 0.3s;
+    gap: 10px;
+}
+
+.sidebar ul li a:hover {
+    background-color: #adadad;
+}
+
+.sidebar-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.content {
+    margin-left: 220px; /* Garante espaço ao lado da sidebar */
+    max-width: calc(100% - 220px); /* Limita a largura da content para evitar sobreposição */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+
+#contato {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 10px;
+}
+
+.contact-btn, .contact-bttn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border: 2px solid #333;
+    transition: transform 0.2s, background 0.3s;
+}
+
+.contact-btn:hover, .contact-bttn:hover {
+    transform: scale(1.1);
+    background-color: #ddd;
+}
+
+.contact-icon {
+    width: 70%;
+    height: auto;
+}
+
+.bold-text {
+    font-weight: bold;
+}
+
+#formacao {
+    color: rgb(252, 250, 250);
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centraliza o conteúdo na tela */
+}
+
+
+.formacao-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Espaço entre os itens */
+}
+
+
+.formacao-item {
+    display: flex;
+    align-items: center;
+    background: #B2A6FE; 
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    width: 100%;
+    text-align: left;
+    gap: 15px;
+    margin-bottom: 20px; /* Espaçamento entre os blocos */
+}
+
+#formacao div p {
+    color: rgb(12, 12, 12);  /* Garante que o texto dentro dos cards seja branco */
+}
+
+.grifo {
+    color: black;  /* Torna a palavra Formação preta */
+}
+
+.formacao-item img {
+    max-width: 100px;
+    height: auto;
+    border-radius: 10px;
+    background: white;
+    padding: 5px;
+}
+
+.formacao-item div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.grifo {
+    padding-bottom: 5px;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .formacao-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .formacao-item {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px;
+    }
+
+    .formacao-item img {
+        max-width: 80px;
+    }
+}
+
+/* Estilos para os itens dos projetos */
+.experiencia-item, .projeto3, .projeto2, .projeto1 {
+    display: flex; /* Flexbox para organizar os itens */
+    flex-direction: column; /* Organiza o conteúdo de forma vertical (imagem abaixo do texto) */
+    align-items: center; /* Centraliza os itens dentro do container */
+    margin-bottom: 20px; /* Espaço entre os projetos */
+    gap: 10px; /* Espaço entre o texto e a imagem */
+}
+
+.projeto-info {
+    background-color: transparent; /* Fundo branco com transparência */
+    padding: 15px; /* Espaçamento interno */
+    border-radius: 8px; /* Cantos arredondados */
+    margin-top: 25px; /* Espaço entre os blocos */
+    backdrop-filter: blur(5px); /* Efeito de desfoque */
+    box-shadow: 0px 4px 6px rgba(221, 211, 211, 0.336); /* Sombra para destaque */
+    text-align: justify; /* Alinhamento do texto agora justificado */
+    display: flex;
+    font-size: 18px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Garante que o conteúdo será centralizado tanto vertical quanto horizontalmente */
+    color: black; /* Cor do texto definida para preto */
+}
+
+.projeto-info img {
+    width: 250px; /* Tamanho fixo para as imagens */
+    height: 150px; /* Altura fixa para manter proporção */
+    object-fit: cover; /* Garante que a imagem cubra o espaço sem deformar */
+    border-radius: 10px; /* Borda arredondada para as imagens */
+    margin-bottom: 15px; /* Espaçamento abaixo da imagem */
+}
+
+.projeto-info div {
+    text-align: center; /* Centraliza o texto dentro do div */
+}
+
+.projeto-info p {
+    margin: 5px 0; /* Espaçamento entre os parágrafos */
+    line-height: 1.6; /* Aumenta o espaçamento entre as linhas para melhor leitura */
+    text-align: justify; /* Justifica o texto */
+}

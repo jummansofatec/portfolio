@@ -1,0 +1,77 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background: url("../assets/img/tempo.png") no-repeat center center fixed;
+    background-size: cover;
+    height: 150vh;
+    color: white;
+}
+
+header {
+    background-color: #489899;
+    color: white;
+    padding: 20px;
+}
+
+.experiencia-profissional {
+    display: flex;
+    flex-direction: column; /* Coloca os cards em uma coluna */
+    align-items: center; /* Centraliza os cards horizontalmente */
+    padding: 20px;
+    gap: 20px; /* Espaçamento entre os cards */
+}
+
+.card {
+    background-color: rgba(245, 245, 245, 0.9);
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    width: 500px; /* Ajuste o tamanho do card */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+}
+
+.card .empresa {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.card p {
+    margin: 5px 0;
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #555;
+}
+
+.card strong {
+    font-weight: bold;
+    color: #000;
+}
+
+footer {
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+footer p {
+    margin-bottom: 5px;
+}
+
+footer button {
+    background-color: #000000;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 20px; /* Adiciona margem abaixo do botão */
+}
+
+footer button:hover {
+    background-color: #280441;
+}
