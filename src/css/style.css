@@ -174,22 +174,17 @@ footer p {
 @media (max-width: 768px) {
     /* Sidebar para telas pequenas */
     .sidebar {
-        width: 0; /* Inicialmente oculta a sidebar */
+        width: 200px; /* A sidebar permanece visível */
         height: 100%;
         overflow: hidden;
-        position: absolute;
-        z-index: 1; /* Coloca a sidebar atrás do conteúdo */
-        transition: width 0.3s ease; /* Transição suave quando aparecer */
-    }
-
-    /* Exibe a sidebar quando o mouse passa por cima */
-    .sidebar:hover {
-        width: 200px; /* Exibe a sidebar */
+        position: fixed; /* Mantém a sidebar fixa na tela */
+        z-index: 1;
+        transition: left 0.3s ease; /* Transição suave ao mover a sidebar */
     }
 
     /* Ajuste no conteúdo para telas pequenas */
     .content {
-        margin-left: 0; /* Não há mais espaço reservado para a sidebar */
+        margin-left: 200px; /* Mantém o conteúdo ao lado da sidebar */
     }
 
     /* Organiza os itens da lista em colunas para telas pequenas */
@@ -198,28 +193,11 @@ footer p {
         align-items: flex-start; /* Alinha à esquerda */
         margin: 10px 0;
     }
-}
-
-/* Ajustes adicionais para garantir que a sidebar seja visível e responsiva sem distorções */
-@media (max-width: 768px) {
-    /* Exibe a sidebar quando o mouse passa por cima */
-    .sidebar {
-        width: 0; /* Inicia oculta */
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: -200px; /* Coloca a sidebar fora da tela */
-        z-index: 1;
-        transition: left 0.3s ease; /* Transição suave ao mover a sidebar */
-    }
-
-    .sidebar.open {
-        left: 0; /* Sidebar aparece ao passar o mouse ou ao ativar a classe 'open' */
-    }
-
-    /* Ajuste no conteúdo */
+    
+    /* Ajusta o tamanho da fonte e espaçamento do conteúdo para telas pequenas */
     .content {
-        margin-left: 0; /* Sem espaço à esquerda para o conteúdo */
+        font-size: 14px; /* Reduz o tamanho da fonte */
+        padding: 15px;  /* Ajusta o espaçamento */
     }
 }
 
