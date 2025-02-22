@@ -17,10 +17,8 @@ header {
 
 .experiencia-profissional {
     display: flex;
-    flex-direction: row; /* Mantém os cards lado a lado por padrão */
-    flex-wrap: wrap; /* Permite que os cards quebrem para a próxima linha quando não houver espaço */
+    flex-direction: column; /* Coloca os cards em uma coluna em todas as telas */
     align-items: center; /* Centraliza os cards horizontalmente */
-    justify-content: center; /* Garante o alinhamento dos cards no centro */
     padding: 20px;
     gap: 20px; /* Espaçamento entre os cards */
 }
@@ -81,11 +79,6 @@ footer button:hover {
 
 /* Media Query para telas menores */
 @media (max-width: 768px) {
-    .experiencia-profissional {
-        flex-direction: column; /* Coloca os cards em uma coluna */
-        gap: 15px; /* Menos espaço entre os cards em telas pequenas */
-    }
-
     .card {
         width: 90%; /* Reduz o tamanho dos cards para 90% da largura disponível */
         padding: 20px; /* Ajusta o padding para melhor aparência */
