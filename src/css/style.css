@@ -8,9 +8,34 @@ body {
 }
 
 header {
-    background-color: #000000;
-    color: white;
-    padding: 20px;
+    background-color: #000000; /* Cor de fundo */
+    color: white; /* Cor do texto */
+    padding: 20px 30px; /* Aumentando o padding para dar mais espaço */
+    border-radius: 10px; /* Bordas arredondadas */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.986); /* Sombra suave */
+    text-align: center; /* Centralizando o texto */
+}
+
+header h1 {
+    font-family: 'Arial', sans-serif; /* Fonte estilosa */
+    font-size: 36px; /* Tamanho grande do texto */
+    font-weight: bold; /* Negrito para dar destaque */
+    text-transform: uppercase; /* Transformando em maiúsculas */
+    letter-spacing: 2px; /* Espaçamento entre as letras */
+    margin: 0; /* Removendo margem para um layout mais limpo */
+    animation: slideIn 1s ease-out; /* Animação de entrada */
+}
+
+/* Animação para o texto */
+@keyframes slideIn {
+    0% {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 .text-large {
@@ -51,9 +76,10 @@ section * {
     width: 250px;
     height: 250px;
     border-radius: 50%;
-    border: 4px solid #020202;
+    border: 4px solid rgba(104, 13, 165, 0.986);
     display: block;
     margin: 10px auto;
+    box-shadow: 0 3px 8px rgba(54, 42, 56, 0.986); /* Sombra suave */
 }
 
 /* Media Query para telas menores */
@@ -70,7 +96,7 @@ footer {
     background-color: #340c3b;
     color: white;
     padding: 10px;
-    width: 99.1%;
+    width: 100%;
     display: flex;
     align-items: center; /* Garante que os itens fiquem centralizados na linha */
     justify-content: center;
@@ -126,18 +152,15 @@ footer p {
     align-items: center;
     padding-top: 20px;
     transition: width 0.3s ease; /* Transição suave para a largura */
+    z-index: 1000;
 }
 
 .sidebar ul {
     list-style-type: none;
     padding: 0;
+    width: 100%;
 }
 
-.sidebar ul li {
-    display: flex;
-    align-items: center;
-    margin: 20px 0;
-}
 
 .sidebar ul li a {
     text-decoration: none;
@@ -151,9 +174,6 @@ footer p {
     gap: 10px;
 }
 
-.sidebar ul li a:hover {
-    background-color: #adadad;
-}
 
 .sidebar-icon {
     width: 30px;
@@ -164,27 +184,52 @@ footer p {
 
 /* Ajuste no conteúdo */
 .content {
-    margin-left: 220px; /* Garante espaço ao lado da sidebar */
-    max-width: calc(100% - 220px); /* Limita a largura da content para evitar sobreposição */
+    margin-left: 200px; /* Espaço ao lado da sidebar */
     padding: 20px;
-    box-sizing: border-box;
+    transition: margin-left 0.3s ease;
+
 }
 
-/* Media Query para telas pequenas */
-@media (max-width: 768px) {
-    /* Sidebar para telas pequenas */
-    .sidebar {
-        width: 200px; /* A sidebar permanece visível */
-        height: 100%;
-        overflow: hidden;
-        position: fixed; /* Mantém a sidebar fixa na tela */
-        z-index: 1;
-        transition: left 0.3s ease; /* Transição suave ao mover a sidebar */
+/* O botão de menu está oculto por padrão */
+.menu-toggle {
+    display: none; /* Inicialmente invisível */
+    position: fixed; /* Fixa na lateral da tela */
+    top: 40px; /* Define a distância do topo */
+    right: 0; /* Alinha completamente à direita */
+    width: 25px; /* Largura fina para não cobrir conteúdo */
+    height: 80px; /* Torna o botão comprido verticalmente */
+    background: #2e012e; /* Cor de fundo */
+    color: white; /* Cor do ícone/texto */
+    border: none; /* Remove borda */
+    cursor: pointer; /* Muda o cursor para indicar clique */
+    font-size: 20px; /* Tamanho da fonte/ícone */
+    z-index: 1100; /* Mantém acima dos outros elementos */
+    display: flex; /* Permite alinhar o conteúdo dentro do botão */
+    align-items: center; /* Centraliza o texto ou ícone no meio */
+    justify-content: center; /* Alinha horizontalmente */
+    writing-mode: vertical-rl; /* Rotaciona o texto para vertical */
+    text-align: center; /* Centraliza o texto */
+    border-radius: 5px; /* Bordas levemente arredondadas */
+}
+
+/* Media Query para telas menores que 768px */
+@media (max-width: 700px) {
+    .menu-toggle {
+        display: block; /* Exibe o botão de menu no mobile */
     }
 
-    /* Ajuste no conteúdo para telas pequenas */
+    .sidebar {
+        width: 200px;
+        left: -200px; /* Esconde a sidebar */
+        transition: left 0.3s ease;
+    }
+
+    .sidebar.open {
+        left: 0; /* Mostra a sidebar */
+    }
+
     .content {
-        margin-left: 200px; /* Mantém o conteúdo ao lado da sidebar */
+        margin-left: 0; /* O conteúdo ocupa toda a tela */
     }
 
     /* Organiza os itens da lista em colunas para telas pequenas */
@@ -193,13 +238,29 @@ footer p {
         align-items: flex-start; /* Alinha à esquerda */
         margin: 10px 0;
     }
-    
+}
+
+/* Ajusta o tamanho da fonte e espaçamento do conteúdo para telas pequenas */
+.content {
+    font-size: 14px; /* Reduz o tamanho da fonte */
+    padding: 15px;  /* Ajusta o espaçamento */
+}
+
+
+    /* Organiza os itens da lista em colunas para telas pequenas */
+    .sidebar ul li {
+        flex-direction: column; /* Organiza os itens verticalmente */
+        align-items: flex-start; /* Alinha à esquerda */
+        margin: 10px 0;
+    }
+
+
     /* Ajusta o tamanho da fonte e espaçamento do conteúdo para telas pequenas */
     .content {
         font-size: 14px; /* Reduz o tamanho da fonte */
         padding: 15px;  /* Ajusta o espaçamento */
     }
-}
+
 
 #contato {
     display: flex;
@@ -257,12 +318,13 @@ footer p {
     background: #B2A6FE; 
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
     max-width: 600px;
     width: 100%;
     text-align: left;
     gap: 15px;
     margin-bottom: 20px; /* Espaçamento entre os blocos */
+    font-size: 18px;
+    box-shadow: 0 6px 8px rgba(87, 86, 86, 0.986); /* Sombra suave */
 }
 
 #formacao div p {
@@ -353,4 +415,35 @@ footer p {
     margin: 5px 0; /* Espaçamento entre os parágrafos */
     line-height: 1.6; /* Aumenta o espaçamento entre as linhas para melhor leitura */
     text-align: justify; /* Justifica o texto */
+}
+
+.copyright {
+    margin-left: 40px; /* Ajuste o valor conforme necessário */
+  }
+
+  /* Estilo para o menu */
+.sidebar {
+    display: block; /* Menú sempre visível em telas grandes */
+}
+
+/* A partir de um tamanho de tela pequeno, o menu deve ser escondido */
+@media (max-width: 768px) {
+    .sidebar {
+        display: none; /* O menu está escondido por padrão em telas pequenas */
+    }
+
+    .sidebar.open {
+        display: block; /* O menu se torna visível quando a classe 'open' é aplicada */
+    }
+}
+
+/* Estilo para o toggle button */
+.toggle-button {
+    display: none; /* Escondido em telas grandes */
+}
+
+@media (max-width: 768px) {
+    .toggle-button {
+        display: block; /* Botão de menu visível em telas pequenas */
+    }
 }

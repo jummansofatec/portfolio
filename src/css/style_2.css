@@ -10,11 +10,34 @@ body {
 }
 
 header {
-    background-color: #489899;
-    color: white;
-    padding: 20px;
+    background-color: #489899; /* Cor de fundo */
+    color: white; /* Cor do texto */
+    padding: 20px 30px; /* Aumentando o padding para dar mais espaço */
+    border-radius: 15px; /* Bordas arredondadas */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Sombra suave */
+    text-align: center; /* Centralizando o texto */
 }
 
+header h1 {
+    font-family: 'Arial', sans-serif; /* Fonte estilosa */
+    font-size: 36px; /* Tamanho grande do texto */
+    font-weight: bold; /* Negrito para dar destaque */
+    text-transform: uppercase; /* Transformando em maiúsculas */
+    margin: 0; /* Removendo margem para um layout mais limpo */
+    animation: slideIn 1s ease-out; /* Animação de entrada */
+}
+
+/* Animação para o texto */
+@keyframes slideIn {
+    0% {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
 .experiencia-profissional {
     display: flex;
     flex-direction: column; /* Coloca os cards em uma coluna em todas as telas */
