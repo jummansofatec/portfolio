@@ -126,15 +126,15 @@ footer p {
     margin: 5px 10px;
 }
 
-.contact-bttn, .contact-btn {
-    margin: 5px 10px;
-}
-
 .contact-icon {
-    width: 20px;
-    height: 20px;
+    transition: none; /* Remove a animação ou transição */
+    width: 40px; /* Define o tamanho fixo da imagem */
+    height: 40px; /* Define o tamanho fixo da imagem */
 }
 
+.contact-icon:hover {
+    transform: none; /* Remove qualquer transformação ao passar o mouse */
+}
 /* Media Query para telas menores */
 @media (max-width: 768px) {
     footer {
@@ -145,10 +145,13 @@ footer p {
     .contact-bttn, .contact-btn {
         margin: 10px 0; /* Ajusta o espaçamento entre os botões */
     }
+    .contact-bttn:hover .contact-icon {
+        transform: none !important;
+    }
 
     .contact-icon {
-        width: 25px; /* Aumenta um pouco o tamanho dos ícones em telas pequenas */
-        height: 25px;
+        transition: none !important; /* Remove qualquer transição */
+        transform: none !important; /* Evita transformações */
     }
 
     footer p {
@@ -192,6 +195,9 @@ footer p {
     gap: 10px;
 }
 
+.sidebar ul li a:hover {
+    background-color: #6e026e; /* Escolha a cor desejada */
+}
 
 .sidebar-icon {
     width: 30px;
@@ -212,7 +218,7 @@ footer p {
 .menu-toggle {
     display: none; /* Inicialmente invisível */
     position: fixed; /* Fixa na lateral da tela */
-    top: 40px; /* Define a distância do topo */
+    top: 25px; /* Define a distância do topo */
     right: 0; /* Alinha completamente à direita */
     width: 25px; /* Largura fina para não cobrir conteúdo */
     height: 80px; /* Torna o botão comprido verticalmente */
