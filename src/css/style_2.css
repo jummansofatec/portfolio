@@ -83,7 +83,7 @@ footer {
 }
 
 footer p {
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 
 footer button {
@@ -108,6 +108,5 @@ footer button:hover {
 }
 
 .copyright {
-    margin-bottom: 50px; /* Aumente o valor conforme necessário */
     color: #000;
 }
