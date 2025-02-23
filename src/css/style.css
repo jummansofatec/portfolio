@@ -13,7 +13,7 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     width: 100%; /* Ocupa toda a largura da viewport */
-    height: 100vh; /* Ocupa toda a altura da viewport */
+    height: 70vh; /* Ocupa toda a altura da viewport */
     margin: 0; /* Remove margens */
     padding: 0; /* Remove qualquer espaçamento extra */
     color: white; /* Para contrastar com o fundo */
@@ -107,7 +107,6 @@ section * {
         height: 150px; /* Ajusta a altura da imagem em telas menores */
     }
 }
-
 
 
 footer {
