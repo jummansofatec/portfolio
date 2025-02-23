@@ -107,3 +107,8 @@ footer button:hover {
         padding: 20px; /* Ajusta o padding para melhor aparência */
     }
 }
+
+.copyright {
+    margin-bottom: 100px; /* Ajuste o valor conforme necessário */
+    color: #000;
+}

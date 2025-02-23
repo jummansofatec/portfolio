@@ -7,11 +7,29 @@ body {
     background-size: cover;
 }
 
+.hero {
+    background-image: url("../assets/img/mente.jpg"); /* Caminho da imagem */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%; /* Ocupa toda a largura da viewport */
+    height: 100vh; /* Ocupa toda a altura da viewport */
+    margin: 0; /* Remove margens */
+    padding: 0; /* Remove qualquer espaçamento extra */
+    color: white; /* Para contrastar com o fundo */
+    display: flex;
+    align-items: center; /* Centraliza o conteúdo verticalmente */
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    border-top: 0px;
+    border-radius: 0 0 20px 20px; /* Arredonda apenas a parte inferior */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.986); /* Sombra suave */
+}
+
 header {
-    background-color: #000000; /* Cor de fundo */
+    background-color: #1d001d; /* Cor de fundo */
     color: white; /* Cor do texto */
     padding: 20px 30px; /* Aumentando o padding para dar mais espaço */
-    border-radius: 10px; /* Bordas arredondadas */
+    border-radius: 10px 10px 0 0; /* Arredonda apenas a parte superior */
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.986); /* Sombra suave */
     text-align: center; /* Centralizando o texto */
 }
@@ -45,7 +63,7 @@ header h1 {
 section {
     padding: 10px 10px; /* Adiciona espaçamento interno */
     margin-bottom: 10px; /* Adiciona espaçamento entre seções */
-    color: rgb(10, 10, 10); /* Deixa o texto branco para contraste */
+    color: rgb(255, 255, 255); /* Deixa o texto branco para contraste */
     text-align: center;
     position: relative; /* Para que os conteúdos fiquem sobre o fundo */
 }
@@ -76,10 +94,10 @@ section * {
     width: 250px;
     height: 250px;
     border-radius: 50%;
-    border: 4px solid rgba(104, 13, 165, 0.986);
+    border: 3px solid rgba(0, 0, 0, 0.986);
     display: block;
     margin: 10px auto;
-    box-shadow: 0 3px 8px rgba(54, 42, 56, 0.986); /* Sombra suave */
+    box-shadow: 0 6px 8px rgba(87, 86, 86, 0.986); /* Sombra suave */
 }
 
 /* Media Query para telas menores */
@@ -405,6 +423,7 @@ footer p {
     object-fit: cover; /* Garante que a imagem cubra o espaço sem deformar */
     border-radius: 10px; /* Borda arredondada para as imagens */
     margin-bottom: 15px; /* Espaçamento abaixo da imagem */
+    box-shadow: 0 6px 8px rgba(87, 86, 86, 0.986); /* Sombra suave */
 }
 
 .projeto-info div {
