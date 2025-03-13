@@ -471,3 +471,51 @@ footer p {
         display: block; /* Botão de menu visível em telas pequenas */
     }
 }
+
+/* Estiliza a opção principal "Idioma" */
+.idioma {
+    display: block;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+/* Submenu oculto por padrão */
+.submenu {
+    display: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    background-color: #222;
+    width: 150px;
+}
+
+/* Exibe o submenu quando o mouse passar sobre "Idioma" */
+.dropdown:hover .submenu {
+    display: block;
+}
+
+/* Estiliza os itens do submenu */
+.submenu li {
+    display: block;
+}
+
+/* Estiliza os links dentro do submenu */
+.submenu li a {
+    display: block;
+    padding: 8px 10px;  /* Menor espaço interno */
+    color: white;
+    text-decoration: none;
+    font-size: 12px;  /* Tamanho de fonte menor */
+    margin-left: 35px;  /* Margem à esquerda */
+}
+
+/* Cor diferente no hover */
+.submenu .portugues:hover {
+    background-color: #679b52; /* Verde */
+}
+
+.submenu .ingles:hover {
+    background-color: #5891ce; /* Azul */
+}
